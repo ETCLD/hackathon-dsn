@@ -1,13 +1,12 @@
-<script setup>
-import Metabase from './components/Metabase.vue'
-</script>
-
 <template>
-  <div>
-    Vue
-  </div>
-  <Metabase />
+    <Menu />
+
+    <Metabase />
 </template>
 
-<style scoped>
-</style>
+<script setup>
+import Menu from './components/Menu.vue'
+import Metabase from './components/Metabase.vue'
+
+
+</script>

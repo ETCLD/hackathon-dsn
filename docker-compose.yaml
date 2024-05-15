@@ -1,0 +1,42 @@
+version: '3.9'
+services:
+  metabase:
+    image: metabase/metabase:latest
+    volumes:
+    - /dev/urandom:/dev/random:ro
+    ports:
+      - 3000:3000
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_HOST: metabase_db
+      MB_DB_PORT: 5432
+      MB_DB_USER: metabase
+      MB_DB_DBNAME: metabase
+      MB_DB_PASS: "tS4xt.oKiLsgfzJt&kU€,d,yd"
+    healthcheck:
+      test: curl --fail -I http://localhost:3000/api/health || exit 1
+      interval: 15s
+      timeout: 5s
+      retries: 5
+
+
+  metabase_db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: metabase
+      POSTGRES_DB: metabase
+      POSTGRES_PASSWORD: "tS4xt.oKiLsgfzJt&kU€,d,yd"
+    volumes:
+      - /media/veracrypt1/metabase_db:/var/lib/postgresql/data
+
+
+  dsn_db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: dsn_db
+      POSTGRES_DB: dsn_db
+      POSTGRES_PASSWORD: "N7D.hMHZu#g#2niqN?9h*j4ap"
+    volumes:
+      - /media/veracrypt1/dsn_db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"

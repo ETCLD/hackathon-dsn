@@ -1,29 +1,41 @@
 <template>
-    <div>
-        Metabase
+    <div class="container">
+        <div class="text-3xl my-3">Dashbord</div>
+        <div class="text-700 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis congue risus sed odio commodo, vel posuere tellus consectetur. Curabitur scelerisque metus purus, ut efficitur ipsum fringilla quis. Pellentesque eu ultricies ex. Aenean quis pharetra sem.</div>
+
+        <Divider />
+
+        <div class="flex flex-wrap gap-3 mb-3">
+            <AutoComplete v-model="siretFilter" multiple :suggestions="siretList" @complete="search" placeholder="Siret" class="w-full md:w-14rem"  />
+            <Button label="Plus de filtres" icon="pi pi-sliders-h" plain text />
+        </div>
+
+        <div class="border-1 border-dashed border-primary text-500 w-100 flex align-items-center justify-content-center h-screen">
+            Dashbord Metabase
+        </div>
     </div>
 </template>
-<script>
-import axios from "axios";
-export default {
-    data() {
-        return {
-        };
-    },
 
-    methods: {},
-    computed: {},
-    mounted() {
-        try {
-            axios.post("http://localhost:8000/dashboard/", {"year": null, "departement": null, "siren": null})
-                .then((response) => {
-                    console.log(response.data);
-                });
-        } catch (error) {
-            console.log(error);
-        }
+<script setup>
+import axios from "axios";
+import { ref, onMounted } from "vue";
+
+onMounted(() => {
+    try {
+        axios.post("http://localhost:8000/dashboard/", {"year": null, "departement": null, "siren": null}).then((response) => {
+            console.log(response.data);
+        });
+    } catch (error) {
+        console.log(error);
     }
-};
+})
+
+const siretFilter = ref();
+const siretList = ref([]);
+const search = (event) => {
+    siretList.value = [...Array(10).keys()].map((item) => event.query + '-' + item);
+}
+
 </script>
 
 <style scoped></style>

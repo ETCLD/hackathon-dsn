@@ -1,0 +1,52 @@
+code,libelle,categorie
+11,licenciement suite à liquidation judiciaire ou à redressement judiciaire,Licenciements
+12,licenciement suite à fermeture définitive de létablissement,Licenciements
+14,licenciement pour motif économique,Licenciements
+15,licenciement pour fin de chantier ou dopération,Licenciements
+20,licenciement pour autre motif,Licenciements
+25,autre fin de contrat pour motif économique,Autres
+26,rupture pour motif économique dans le cadre d’un contrat de sécurisation professionnelle CSP,Ruptures conventionnelles
+31,fin de contrat à durée déterminée ou fin daccueil occasionnel,CDD
+32,fin de mission dintérim,CDD
+33,rupture anticipée d’un CDD ou d’un contrat de mission en cas d’inaptitude physique constatée par le médecin du travail,CDD
+34,fin de période dessai à linitiative de lemployeur,Fins de période d'essai
+35,fin de période dessai à linitiative du salarié,Fins de période d'essai
+36,"rupture anticipée dun CDD, d’un contrat de professionnalisation, d'un contrat dapprentissage ou d’un contrat demission à linitiative de l'employeur				",CDD
+37,"rupture anticipée dun CDD, d’un contrat de professionnalisation, d’un contrat de professionnalisation, dun contrat dapprentissage ou d’un contrat demission à linitiative du salarié",CDD
+38,mise à la retraite par lemployeur,Retraites
+39,départ à la retraite à linitiative du salarié,Retraites
+43,rupture conventionnelle,Ruptures conventionnelles
+58,prise dacte de la rupture de contrat de travail,?
+59,démission,Démissions
+65,décès de lemployeur ou internement / conduit à un licenciement autre motif,Autres
+66,décès du salarié,Autres
+70,[FP] Révocation suite à abandon de poste,?
+71,[FP] Révocation suite à sanction pénale,?
+81,fin de contrat dapprentissage,CDD
+82,résiliation judiciaire du contrat de travail,Autres
+83,rupture de contrat de travail ou d’un contrat de mission pour force majeure ou fait du prince,Autres
+84,"rupture dun commun accord du CDD,d’un contrat de professionnalisation, du contrat dapprentissage ou d’un contrat de mission",CDD
+85,fin de mandat,Autres
+86,licenciement convention CATS,Licenciements
+87,licenciement pour faute grave,Licenciements
+88,licenciement pour faute lourde,Licenciements
+89,licenciement pour force majeure,Licenciements
+91,licenciement pour inaptitude physique dorigine non professionnelle,Licenciements
+92,licenciement pour inaptitude physique dorigine professionnelle,Licenciements
+93,licenciement suite à décision dune autorité administrative,Licenciements
+94,rupture anticipée du contrat de travail pour arrêt de tournage,Ruptures conventionnelles
+95,rupture anticipée du contrat de travail ou d’un contrat de mission pour faute grave,Ruptures conventionnelles
+96,rupture anticipée du contrat de travail ou d’un contrat de mission pour faute lourde,Ruptures conventionnelles
+97,rupture anticipée d’un contrat de travail ou d’un contrat de mission suite à fermeture de létablissement,Ruptures conventionnelles
+98,retrait denfant,Ruptures conventionnelles
+99,Annulation,?
+100,"Mutation au sein du même groupe ou extérieure au groupe pour les secteurs d’activité autorisés (gardiennage,ménage,restauration,etc.) sans rupture du contrat",?
+110,Rupture conventionnelle collective,Ruptures conventionnelles
+111,Rupture amiable dans le cadre d’un congé de mobilité,Ruptures conventionnelles
+112,Rupture dans le cadre dun accord de performance collective,Ruptures conventionnelles
+113,Licenciement pour motif spécifique (Article L. 2254-2 du Code du Travail),Licenciements
+114,Rupture d’un commun accord pour entrée en PAP,Ruptures conventionnelles
+115,Licenciement au titre des articles 18 et 19 de la loi n° 2017-1339 du 15 septembre 2017,Licenciements
+116,Fin de ligne de service,?
+998,transfert du contrat de travail sans rupture du contrat vers un autre établissement pas rentré dans la DSN,?
+999,"fin de relation avec l’employeur (autres que contrat de travail,convention ou mandat)",?

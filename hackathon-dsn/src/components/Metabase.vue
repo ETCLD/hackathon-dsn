@@ -11,7 +11,13 @@
         </div>
 
         <div class="border-1 border-dashed border-primary text-500 w-100 flex align-items-center justify-content-center h-screen">
-            Dashbord Metabase
+            <iframe
+                v-if="iframeUrl"
+                id="metabase_iframe"
+                :src="iframeUrl"
+                frameborder="0"
+                allowtransparency>
+            </iframe>
         </div>
     </div>
 </template>
@@ -20,10 +26,13 @@
 import axios from "axios";
 import { ref, onMounted } from "vue";
 
+const iframeUrl = ref("");
+
 onMounted(() => {
     try {
-        axios.post("http://localhost:8000/dashboard/", {"year": null, "departement": null, "siren": null}).then((response) => {
+        axios.post("http://localhost:8000/dashboard/", {"dashboard_id": 3, "filters": {}}).then((response) => {
             console.log(response.data);
+            iframeUrl.value = response.data.iframe_url;
         });
     } catch (error) {
         console.log(error);
@@ -38,4 +47,10 @@ const search = (event) => {
 
 </script>
 
-<style scoped></style>
+<style scoped>
+#metabase_iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+</style>

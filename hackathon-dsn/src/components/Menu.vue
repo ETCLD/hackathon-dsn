@@ -4,7 +4,7 @@
             <template #start>
                 <img src="/logo_moche.svg" alt="Logo APRES">
                 <div class="ml-4">
-                    <div class="font-bold">Aide au Pilotage pour le Reseau Emploi sur le Suivi de parcours</div>
+                    <div class="font-bold text-xl text-primary">Aide au Pilotage pour le Reseau Emploi sur le Suivi de parcours</div>
                     <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis congue risus sed odio commodo</div>
                 </div>
             </template>
@@ -25,19 +25,26 @@
     </div>
     <div class="menu">
         <div class="container">
-            <TabMenu :model="items" />
+            <TabMenu v-model:activeIndex="activeMenu" :model="items" />
         </div>
     </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
+const emit = defineEmits(['menuChanged'])
 
 const items = ref([
-    { label: 'Fonctionnalité 1', icon: 'pi pi-chart-bar' },
-    { label: 'Fonctionnalité 2 future', icon: 'pi pi-building' },
-    { label: 'Fonctionnalité 3 future', icon: 'pi pi-map' },
+    { label: 'Taux d’emploi dans l’insertion', icon: 'pi pi-chart-bar', route:"dashbord_0" },
+    { label: 'Suivi impact cohorte', icon: 'pi pi-users', route:"cohorte" },
+    { label: 'Fonctionnalité 2 future', icon: 'pi pi-building', route:"dashbord_1", disabled:true},
 ]);
+
+const activeMenu = ref(0);
+watch(activeMenu, (value) => {
+    emit("menuChanged", items.value[value].route);
+});
+
 </script>
 
 <style scoped>

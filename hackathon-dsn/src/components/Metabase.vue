@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="text-3xl my-3">Dashbord</div>
+        <div class="text-3xl my-3">Tableau de bord sur les taux d’emploi dans l’insertion</div>
         <div class="text-700 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis congue risus sed odio commodo, vel posuere tellus consectetur. Curabitur scelerisque metus purus, ut efficitur ipsum fringilla quis. Pellentesque eu ultricies ex. Aenean quis pharetra sem.</div>
 
         <Divider />

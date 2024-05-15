@@ -4,3 +4,5 @@ python-dotenv
 psycopg2-binary
 pyarrow
 fastparquet
+fastapi
+pyjwt

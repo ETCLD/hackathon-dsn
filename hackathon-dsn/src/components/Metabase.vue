@@ -30,7 +30,7 @@ const iframeUrl = ref("");
 
 onMounted(() => {
     try {
-        axios.post("http://localhost:8000/dashboard/", {"dashboard_id": 3, "filters": {}}).then((response) => {
+        axios.post(`http://${window.location.hostname}:8000/dashboard/`, {"dashboard_id": 3, "filters": {}}).then((response) => {
             console.log(response.data);
             iframeUrl.value = response.data.iframe_url;
         });

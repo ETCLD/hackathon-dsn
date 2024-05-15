@@ -1,0 +1,20 @@
+{
+  "homepage": {
+    "title": "Impacts des politiques d'insertion sur l'emploi",
+    "reuse_star": {
+      "title": "Tableaux de bords",
+      "description": "La plateforme de l'inclusion propose à tous les acteurs de l'insertion un tableau de bord présentant des indicateurs pour vous permettre de piloter vos politiques publiques",
+      "tagline": "Découvrez ici ces tableaux de bords."
+    },
+    "propose_reuse": {
+      "title": "Proposez une exploration",
+      "tagline": "Vous avez une idée d'exploration des données publiques qui pourrait être utile ?",
+      "button_text": "Soumettre une idée"
+    },
+    "reuse": {
+      "title": "Réutilisations de la communauté",
+      "description": "La force de l'Open Data, c'est sa communauté. Découvrez notre sélection de réutilisations de données réalisées par d'autres administrations, entreprises, associations ou citoyens.",
+      "choose_theme": "Choisissez une thématique :"
+    }
+  }
+}

@@ -5,7 +5,7 @@
 
         <Divider />
 
-        <div class="flex flex-wrap gap-3 mb-3">
+        <div class="flex flex-wrap gap-3 mb-3" v-if="false">
             <AutoComplete v-model="siretFilter" multiple :suggestions="siretList" @complete="search" placeholder="Siret" class="w-full md:w-14rem"  />
             <Button label="Plus de filtres" icon="pi pi-sliders-h" plain text />
         </div>

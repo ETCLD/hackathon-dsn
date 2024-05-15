@@ -19,7 +19,7 @@ L’équipe est composée de 11 personnes, représentant 5 structures de l’éc
 * [Bim Bam Job](https://www.bimbamjob.fr/) - Entreprise sociale et solidaire qui crée, imagine et déploie des dispositifs d'insertion socio-professionnelle
 * [Hello Elton](https://www.helloelton.com/) - Entreprise sociale et solidaire qui oeuvre pour l’insertion professionnelle via la formation
 * [Plateforme de l’Inclusion](https://inclusion.beta.gouv.fr/) - Groupement d'intérêt public qui crée des services numériques gratuits, pour faciliter la vie des personnes éloignées de l'emploi et de celles et ceux qui les accompagnent
-* [data.gouv](https://www.data.gouv.fr/fr/) : Plateforme d’open data de l’Etat
+* [data.gouv](https://www.data.gouv.fr/fr/) - Plateforme d’open data de l’Etat
 
 ### 👥 Participants
 
@@ -39,48 +39,42 @@ L’équipe est composée de 11 personnes, représentant 5 structures de l’éc
 
 ### Description
 
-* *Problématique et proposition de valeur.*
-* *A quelle problématique s’attaque votre projet ?*
-* *Quelle est votre proposition de valeur ?*
+Les acteurs de l’insertion (financeurs, prescripteurs et structures) manquent de vision fiable sur l’insertion professionnelle.
+
+* **Contexte :** De nombreux dispositifs d’insertion et d’emploi existent pour accompagner les personnes 
+* **Irritant :** Une fois que l’usager est sorti du dispositif, les structures n’ont plus de vision fiable sur leur insertion professionnelle
+* **Conséquences :**
+  * Les structures construisent des dispositifs d’insertion sans retour sur leur “efficacité” en terme de retour à l’emploi
+  * Les remontées d’informations déclaratives sont chronophages et non exhaustives.
+  * Manque de vision commune et partagée.
 
 ### Solution
 
-* *Description de la solution et de ses fonctionnalités*
-* *Quel usage est fait des données ? Que vous permettent-elles de faire ?*
-* *Quelle est la méthode de création de la solution ?*
+#### Un tableau de bord commun fiable accessible de manière sécurisée
+
+* Des indicateurs agrégés à visée opérationnelle
+  * avec des indicateurs co-construits avec les utilisateurs et les institutions concernées
+  * avec des données réactives pour piloter localement
+* Un processus facilité pour avoir une vision sur des populations non identifiables directement dans la DSN.
 
 ### Impact envisagé
 
-* *Que permet de faire la solution ?*
-* *Qui sont les usagers visés, et qu’en feraient-ils ?*
+#### Bénéfices directs quantifiables
+
+* 1 Million d’heures par an de suivi économisées pour les SIAE, RSA, Certifications France Compétences (+ de 7000 structures utilisatrices)
+
+#### Bénéfices indirects quantitatifs et qualitatifs 
+
+* Des décisions éclairées au profit de dispositifs plus efficaces
+* Au delà d’un commun numérique : une grille de lecture commune
 
 ### 📑 Ressources
 
 * [Documentation du projet](https://docs.google.com/document/d/1JdpwF7pjL_Ypjh1ReTph-7AocaGXsjiB8OspVxVMiLg)
-* [Slides de présentation](https://www.canva.com/design/DAGFSHum68s/jNwJmUF7TDTgW74IOW9PjQ)
-
-### [Facultatif] Retours sur la qualité des données exploitées
-
-* *Quelles sont les difficultés que vous avez rencontrées dans l’usage des données ?*
+* [Slides de présentation](https://www.canva.com/design/DAGFSHum68s/jNwJmUF7TDTgW74IOW9PjQ/)
 
 ## Tech
 
 Dans le cadre du hackathon, un mini site web a été développé en utilisant FastAPI et VueJS.
 Ce site web incorpore un tableau de bord Metabase utilisant les données disponibles lors du hackathon.
 Etant donné le contexte, ce tableau de bord n'est pas accessible au-delà de la démo présentée.
-
-### Installation & lancement
-
-```
-pip install -r requirements.txt
-cd hackathon-dsn
-npm install
-```
-
-Dans deux fenêtres différentes :
-* Au sein du dossier racine : `fastapi dev main.py`
-* Au sein du dossier /hackathon-dsn/ : `npm run dev`
-
-### Données
-
-Les données affichées lors de la démonstration sont des données agrégées à partir du jeu de données mis à disposition lors du hackathon.

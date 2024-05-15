@@ -6,10 +6,6 @@ from sqlalchemy import create_engine, engine
 
 import pandas as pd
 
-# get scope
-# split pop (= get IAE, keep IAE end date, remove IAE and time before)
-# Apply referentials
-#
 
 def pipeline(engine):
     full_scope = get_full_scope(engine)
@@ -38,35 +34,20 @@ def split_contracts(full_scope):
 
 def transform_contracts(post_iae_contracts, engine, months_after=12):
 
-    # Trouver tous les contrats commençant au plus tard après x mois
-
     post_iae_contracts = post_iae_contracts.loc[
         (post_iae_contracts['date_debut_contrat'] - post_iae_contracts['date_fin_contrat_iae']).dt.days < months_after*30
     ].reset_index(drop=True)
 
-    # Calculer le salaire brut pour chaque couple (salarié, employeur)
+    # salaires = get_salaires(engine, post_iae_contracts['id_employeur_assure'].unique().tolist())
+    # post_iae_contracts = post_iae_contracts.merge(salaires, on='id_employeur_assure')
 
-    salaires = get_salaires(engine, post_iae_contracts['id_employeur_assure'].unique().tolist())
-    post_iae_contracts = post_iae_contracts.merge(salaires, on='id_employeur_assure')
-
-    # Calculer le nombre de mois travaillés pour chaque contrat
-
-    post_iae_contracts['mois_travailles'] = np.minimum(
-            post_iae_contracts['date_fin_contrat'] - post_iae_contracts['date_debut_contrat'],
-            pd.Timestamp.now() - post_iae_contracts['date_debut_contrat']
-    ).dt.days/30
-
-    # Calculer la quotite pour chaque contrat
+    post_iae_contracts['anciennete_contrat'] = post_iae_contracts['anciennete_contrat'].dt.days.fillna(0).astype(int)
 
     post_iae_contracts['pourcentage_temps'] = post_iae_contracts['quotite'].astype(float).fillna(0)/post_iae_contracts['quotite_categorie'].astype(float).fillna(1)
     post_iae_contracts.loc[post_iae_contracts['pourcentage_temps'] > 1, 'pourcentage_temps'] = 1
     post_iae_contracts.loc[post_iae_contracts['pourcentage_temps'] < 0, 'pourcentage_temps'] = 0
 
-    # Mapper le type de contrat (CDD CDI etc)
-
     post_iae_contracts['nature_contrat'] = post_iae_contracts['nature_contrat'].map(REFERENTIALS['nature_contrat'])
-
-    # Si rupture, indiquer le motif
 
     post_iae_contracts['motif_rupture'] = post_iae_contracts['motif_rupture'].fillna('0').astype(int).map(REFERENTIALS['motif_rupture'])
 

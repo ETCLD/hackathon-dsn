@@ -29,7 +29,7 @@ L’équipe est composée de 11 personnes, représentant 5 structures de l’éc
 * Claire Casubolo, experte métier
 * Yannick Passarelli, data scientist
 * Edgar Loriot, data scientist
-* Lucie Le Rolland, développeuse
+* Lucie Le Rolland, data scientist
 * Kévin Aupée, développeur
 * Romain Le Gonidec, développeur
 * Geoffrey Aldebert, développeur
